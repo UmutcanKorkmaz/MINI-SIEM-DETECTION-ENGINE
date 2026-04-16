@@ -1,0 +1,16 @@
+RULE 1:
+Brute force detection:
+- ≥4 AUTH_FAIL within 1 minute per IP
+
+RULE 2:
+Post-auth anomaly:
+- AUTH_SUCCESS followed by admin endpoint access
+
+RULE 3:
+Recon detection:
+- multiple 4xx responses on sensitive endpoints
+
+RULE 4:
+Cross-source correlation:
+- AUTH_FAIL burst + web scanning from same IP
+→ HIGH severity alert
