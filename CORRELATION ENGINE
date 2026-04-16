@@ -1,0 +1,17 @@
+# Correlation Logic
+
+This SIEM simulation correlates authentication logs and web access logs using IP as the primary key.
+
+## Logic Flow:
+1. Detect authentication failure spike
+2. Check for successful login after failure burst
+3. Correlate with web activity from same IP
+4. Evaluate request pattern for reconnaissance behavior
+
+## Decision Model:
+- AUTH_FAIL spike → Suspicious
+- AUTH_SUCCESS after spike → Compromised session risk
+- Web scanning after login → Active exploitation
+
+## Final Output:
+Single IP behavior is merged into one incident timeline and classified as HIGH severity attack chain.
