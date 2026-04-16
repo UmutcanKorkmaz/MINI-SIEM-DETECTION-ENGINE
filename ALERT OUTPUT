@@ -1,0 +1,19 @@
+ALERT ID: SIEM-001
+
+Severity: HIGH
+
+Summary:
+Multi-stage attack detected from IP 185.22.31.4
+
+Timeline:
+- Brute force attempt detected
+- Successful authentication occurred
+- Web reconnaissance activity observed
+
+Classification:
+Credential compromise + post-auth reconnaissance
+
+Action:
+- Block IP
+- Force session logout
+- Escalate to SOC Tier 2
